@@ -1,15 +1,11 @@
-dictionary = {
-    'Income Statement' : ["total sales","Doordash funded subtotal discount amount","Merchant Funded Discount"],
-    'tran_month':[202401,202402,202403,202404,202405],
-    "columns":["total_sales","complex_amount"],
+query_column_creation_params ={
+    "KPI":["Total Sales","Doordash funded subtotal discount amount","Merchant Funded Discount","Commission"],
+    "tran_month":[202411,202412,202501,202502,202503,202504,202505,202506,202507,202508,202509,202510,202511,202512],
+    "columns" : ["subtotal","0 - (door_funde_subto_disco_amoun)","0 - (merc_funde_subto_disco_amoun)","0 - (commission)"],
+    "report" :"doordash_rep",
 
 }
 
-# for income_statement_keys in dictionary["Income Statement"]:
-#     for tran_month_keys in dictionary["tran_month"]:
-#         for column_keys in dictionary["columns"]:
-#             print(income_statement_keys + "," + str(tran_month_keys)+"," + column_keys)
+query_column_creation_params["tran_month"] = query_column_creation_params["tran_month"][::-1]
 
-
-column1 = [202401,202402,202403,202404,202405]
-print(", ".join(str(x) for x in column1))
+print(query_column_creation_params["tran_month"][-1])
